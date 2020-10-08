@@ -1,8 +1,25 @@
 import React from "react";
 import "./App.css";
+import Row from "./Row";
+import requests from "./requests";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Row
+        title="Netfilx Originals"
+        fetchUrl={requests.fetchNetflixOriginal}
+        isLargeRow
+      />
+      <Row title="Trending Now" fetchUrl={requests.fetchTranding} />
+      <Row title="Top Rated" fetchUrl={requests.fethTopRated} />
+      <Row title="Action Movies" fetchUrl={requests.fectchActionMovies} />
+      <Row title="Comedy Movies" fetchUrl={requests.fectchComedyMovies} />
+      <Row title="Horror Movies" fetchUrl={requests.fectchHorrorMovies} />
+      <Row title="Romance Movies" fetchUrl={requests.fectchRomanceMovies} />
+      <Row title="Documentary Movies" fetchUrl={requests.fectchDocumentaries} />
+    </div>
+  );
 }
 
 export default App;
